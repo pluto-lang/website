@@ -1,0 +1,30 @@
+{
+  "name": "pluto-website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "The website of Pluto",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "update-docs": "bash scripts/update-docs.sh",
+    "clean": "rm -rf pages/* public/assets pluto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pluto-lang/website.git"
+  },
+  "author": "Shu Ding <g@shud.in>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.0.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "typescript": "^4.9.3"
+  }
+}
