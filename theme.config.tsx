@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { DocsThemeConfig } from "nextra-theme-docs";
+import { Analytics } from '@vercel/analytics/react';
 
 const PLUTO_MAIN_REPO_URL = "https://github.com/pluto-lang/pluto";
 
@@ -50,7 +51,12 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: PLUTO_MAIN_REPO_URL,
   footer: {
-    text: "The pluto documentation.",
+    text: (
+      <>
+        The Pluto documentation.
+        <Analytics />
+      </>
+    ),
   },
   search: {
     placeholder: () => {
