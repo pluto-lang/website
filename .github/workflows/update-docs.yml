@@ -1,0 +1,43 @@
+name: Update Docs
+
+on:
+  repository_dispatch:
+    types: [trigger-update-docs]
+
+jobs:
+  update_docs:
+    name: Update Docs and Push a Commit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Clone the Pluto main repository
+        run: git clone https://github.com/pluto-lang/pluto.git
+      - name: Update docs
+        run: npm run update-docs
+      - name: Remove the directory of the Pluto repository
+        run: rm -rf pluto
+      - name: Exit if no updates
+        # `git diff-index --quiet HEAD --` will return a 1 if there are any updates.
+        run: |
+          if ! git diff --quiet; then
+            echo "No updates in documentation."
+            exit 0
+          fi
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git commit -m "feat(docs): update docs" -m "Updates the docs. See details in [workflow run].
+          [Workflow Run]: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ------
+          *Automatically created via the 'update-docs' workflow*"
+      - name: Push changes
+        run: git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
