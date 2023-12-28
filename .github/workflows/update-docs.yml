@@ -3,6 +3,9 @@ name: Update Docs
 on:
   repository_dispatch:
     types: [trigger-update-docs]
+  push:
+    branches:
+      - main
 
 jobs:
   update_docs:
@@ -24,11 +27,14 @@ jobs:
       - name: Exit if no updates
         # `git diff-index --quiet HEAD --` will return a 1 if there are any updates.
         run: |
-          if ! git diff --quiet; then
+          git diff --quiet
+          if [[ $? -eq 0 ]]; then
             echo "No updates in documentation."
-            exit 0
+            echo "NO_UPDATE=true" >> $GITHUB_ENV
           fi
+          git diff --name-only
       - name: Commit changes
+        if: env.NO_UPDATE != 'true'
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
@@ -38,6 +44,7 @@ jobs:
           ------
           *Automatically created via the 'update-docs' workflow*"
       - name: Push changes
+        if: env.NO_UPDATE != 'true'
         run: git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
