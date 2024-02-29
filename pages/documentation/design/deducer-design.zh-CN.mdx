@@ -285,13 +285,13 @@ buildQueue("queue2", createAndConfigQueue).subscribe(async () => {
 
 能够深入依赖库，获取指定类型的继承链，包括类实现方法的继承链，得到下图所示的关系
 
-![Class Inheritance](../../../assets/deducer-design-class-inheritance.png)
+![Class Inheritance](../../../public/assets/deducer-design-class-inheritance.png)
 
 ### 分析过程
 
 #### 1）寻找 构造特殊对象的语句 与 调用特殊方法的语句
 
-![Call Graph](../../../assets/deducer-design-call-graph.png)
+![Call Graph](../../../public/assets/deducer-design-call-graph.png)
 
 上图是示例程序的 Call Graph，从 Call Graph 中，可以看到程序调用了 `buildQueue`、`createAndConfigQueue`、`resource.Queue` 函数，其中 `resource.Queue` 是 Pluto 资源特殊类型。我们自顶向下进行遍历每个函数，遍历时首先判断该函数是否特殊对象的构造过程或特殊方法的调用过程。
 
@@ -312,10 +312,10 @@ buildQueue("queue2", createAndConfigQueue).subscribe(async () => {
 #### 2）寻找构造的若干个特殊对象
 
 程序的控制流图：
-![Control Flow Graph](../../../assets/deducer-design-cfg.png)
+![Control Flow Graph](../../../public/assets/deducer-design-cfg.png)
 
 程序的数据流图：
-![Data Flow Graph](../../../assets/deducer-design-dfg.png)
+![Data Flow Graph](../../../public/assets/deducer-design-dfg.png)
 
 接下来，需要确定程序构造了哪些特殊对象、每个特殊对象构造时传入的参数是什么。
 
