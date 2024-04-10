@@ -3,9 +3,7 @@ name: Update Docs
 on:
   repository_dispatch:
     types: [trigger-update-docs]
-  push:
-    branches:
-      - main
+  workflow_dispatch: {}
 
 jobs:
   update_docs:
