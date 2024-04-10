@@ -20,7 +20,7 @@ Pluto 是一种新型开源编程语言，旨在帮助开发者编写云应用�
 [https://github.com/pluto-lang/pluto/assets/20160766/add7f29c-a8f4-406a-a1b5-75495882c809](https://github.com/pluto-lang/pluto/assets/20160766/add7f29c-a8f4-406a-a1b5-75495882c809)
 
 <p align="center">
-  <img src="./assets/demo-biz-logic.png" alt="business logic" width="400">
+  <img src="/assets/demo-biz-logic.png" alt="business logic" width="400">
 </p>
 
 这个例子的业务逻辑就是上面这张图所展示的，主要是 3 种资源和 3 个过程。如果在 AWS 上部署这个应用，需要配置 Lambda、IAM、ApiGateway、Route、Deployment、SNS、Trigger 等多种资源，手动配置非常繁琐，并且很容易出错。
@@ -55,7 +55,7 @@ Pluto 是一种新型开源编程语言，旨在帮助开发者编写云应用�
 ## 🔧 Pluto 是如何工作的?
 
 <p align="center">
-  <img src="./assets/pluto-arch.jpg" alt="Pluto Architecture" width="800">
+  <img src="/assets/pluto-arch.jpg" alt="Pluto Architecture" width="800">
 </p>
 
 整体上，Pluto 首先从用户代码中推导出所需云资源及资源间依赖关系，构建云参考架构（architecture reference）。然后，依据 arch ref 生成一份独立于用户代码的 IaC 代码，并将用户代码拆分成多个业务模块。最终，由 IaC 引擎适配器根据 IaC 代码的类型调用相应 IaC 引擎执行部署，将应用程序发布到指定的云平台上。整个流程中，推导器、生成器、适配器都是可替换的，以此来支持更多不同的推导、生成方式和 IaC 引擎。

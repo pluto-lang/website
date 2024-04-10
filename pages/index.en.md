@@ -22,7 +22,7 @@ Let's look at a simple example:
 [https://github.com/pluto-lang/pluto/assets/20160766/add7f29c-a8f4-406a-a1b5-75495882c809](https://github.com/pluto-lang/pluto/assets/20160766/add7f29c-a8f4-406a-a1b5-75495882c809)
 
 <p align="center">
-  <img src="./assets/demo-biz-logic.png" alt="business logic" width="400">
+  <img src="/assets/demo-biz-logic.png" alt="business logic" width="400">
 </p>
 
 The business logic of this example is illustrated in the above diagram, which primarily involves three types of resources and three processes. When deploying this application on AWS, it requires configuring multiple resources such as Lambda, IAM, ApiGateway, Route, Deployment, SNS, and Trigger. Manual configuration can be time-consuming and prone to errors.
@@ -57,7 +57,7 @@ You can learn why we created Pluto from here. In short, we want to solve several
 ## 🔧 How Pluto Works?
 
 <p align="center">
-  <img src="./assets/pluto-arch.jpg" alt="Pluto Architecture" width="800">
+  <img src="/assets/pluto-arch.jpg" alt="Pluto Architecture" width="800">
 </p>
 
 Overall, Pluto first deduces the required cloud resources and the dependencies between resources from the user code, and builds the architecture reference for the cloud. Then, based on the architecture reference, it generates IaC code independent of the user code, and splits the user code into multiple business modules. Finally, the provisioning engine adapter calls the corresponding provisioning engine to execute the deployment based on the type of IaC code, and publishes the application to the specified cloud platform. Throughout the entire process, the deducer, generator, and adapter can be easily replaced. You have the flexibility to implement them using different deducing and generating techniques, and also support additional IaC engines.
