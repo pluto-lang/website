@@ -11,6 +11,9 @@
   "documentation": {
     "title": "文档"
   },
+  "cookbook": {
+    "title": "案例"
+  },
   "blogs": {
     "title": "博客",
     "theme": {

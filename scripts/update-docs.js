@@ -39,6 +39,15 @@ async function constructCookbook() {
       `$1(${urlPrefix}/$2)`
     );
 
+    // Add the title to the frontmatter.
+    if (!content.trim().startsWith("---")) {
+      // Get the title with prefix "#"
+      const title = content.match(/^# (.*)$/m)[1];
+      if (title) {
+        content = `---\ntitle: ${title}\n---\n\n${content}`;
+      }
+    }
+
     const suffix = filename.endsWith("_zh.md") ? ".zh-CN.md" : ".en.md";
     const newFilename = dirname + suffix;
     fs.writeFileSync(`pages/cookbook/${newFilename}`, content, "utf8");
