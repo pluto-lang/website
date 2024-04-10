@@ -1,3 +1,7 @@
+---
+title: Building a Llama2 Conversational Chatbot with AWS and LangChain
+---
+
 # Building a Llama2 Conversational Chatbot with AWS and LangChain
 
 In this guide, you'll discover how to create a simple conversational chatbot by integrating Pluto, AWS services, LangChain, and Llama2. We’ll walk you through the architecture components of our example application and how to deploy and operate it using Pluto.

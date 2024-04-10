@@ -1,3 +1,7 @@
+---
+title: LangServe with Pluto Example
+---
+
 # LangServe with Pluto Example
 
 This example demonstrates how to use Pluto to deploy a LangServe [example application](https://github.com/langchain-ai/langserve/tree/main/examples/agent_with_history) to AWS. Pluto will set up an Api Gateway instance as the entry point for the LangServe app, and also create a Lambda instance to handle requests.

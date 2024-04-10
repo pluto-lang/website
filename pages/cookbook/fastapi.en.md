@@ -1,3 +1,7 @@
+---
+title: FastAPI with Pluto Example
+---
+
 # FastAPI with Pluto Example
 
 This is an example application that shows how to adapt a FastAPI application with Pluto.

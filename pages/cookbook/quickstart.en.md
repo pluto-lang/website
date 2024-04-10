@@ -1,3 +1,7 @@
+---
+title: A Pluto Application
+---
+
 # A Pluto Application
 
 This is a sample Pluto application.

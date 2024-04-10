@@ -1,3 +1,7 @@
+---
+title: 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人
+---
+
 # 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人
 
 与[TypeScript 版本的 Pluto 示例](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker-python/../langchain-llama2-chatbot-sagemaker/)应用区别在于使用 Python 实现。

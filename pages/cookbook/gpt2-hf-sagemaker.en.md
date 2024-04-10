@@ -1,3 +1,7 @@
+---
+title: Deploying GPT-2 Large Language Model on AWS SageMaker
+---
+
 # Deploying GPT-2 Large Language Model on AWS SageMaker
 
 Pluto simplifies the deployment of Hugging Face models on AWS SageMaker and enables integration with other AWS services such as SNS, DynamoDB, Lambda, and API Gateway.

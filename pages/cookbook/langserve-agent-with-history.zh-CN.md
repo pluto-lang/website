@@ -1,3 +1,7 @@
+---
+title: Pluto 部署 LangServe 应用
+---
+
 # Pluto 部署 LangServe 应用
 
 这个示例展示了如何使用 Pluto 将一个 LangServe 的[示例应用](https://github.com/langchain-ai/langserve/tree/main/examples/agent_with_history)部署到 AWS 上，Pluto 会创建一个 Api Gateway 实例作为 LangServe 应用的入口，同时会创建一个 Lambda 实例来处理请求。

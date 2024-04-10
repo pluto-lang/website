@@ -1,3 +1,7 @@
+---
+title: Deploying LangChain Application Integrated with Llama2
+---
+
 # Deploying LangChain Application Integrated with Llama2
 
 This document will guide you through deploying a LangChain application that seamlessly integrates with the Llama2 large language model using Pluto, ultimately productizing and deploying the LangChain application on the AWS cloud platform with an exposed HTTP interface.

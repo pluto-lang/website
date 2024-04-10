@@ -1,3 +1,7 @@
+---
+title: A Command Line Chatbot using OpenAI API
+---
+
 # A Command Line Chatbot using OpenAI API
 
 This article presents a Pluto example application that creates a chatbot running in a command line terminal. The chatbot supports multiple sessions and automatically saves and restores sessions.
