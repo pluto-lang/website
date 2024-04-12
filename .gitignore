@@ -1,2 +1,4 @@
 .next
 node_modules
+pluto/
+scripts/local-test.sh
