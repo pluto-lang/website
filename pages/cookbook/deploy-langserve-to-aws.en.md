@@ -9,7 +9,7 @@ description: Deploy LangServe application to AWS using Pluto, expose LangServe a
 
 [LangServe](https://github.com/langchain-ai/langserve) is a subproject of LangChain, which can help developers deploy LangChain's Runnable and Chain through REST API. At the same time, it also provides a client for calling Runnable deployed on the server, including multiple versions such as Python and TypeScript, and provides Playground by default for online trial after deployment.
 
-You can get all the code for this example from[here](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/./). [This link](https://codesandbox.io/p/devbox/deploy-langserve-application-to-aws-csj8wj) provides an online IDE for this sample application. Click the Fork button in the upper right corner to create your own development environment, and then you can directly modify the code and deploy it to AWS in the browser.
+You can get all the code for this example from [here](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/). [This link](https://codesandbox.io/p/devbox/deploy-langserve-application-to-aws-csj8wj) provides an online IDE for this sample application. Click the Fork button in the upper right corner to create your own development environment, and then you can directly modify the code and deploy it to AWS in the browser.
 
 **⚠️Note:**
 
@@ -18,7 +18,7 @@ You can get all the code for this example from[here](https://github.com/pluto-la
 
 ## Environment Preparation
 
-If you have not configured the Pluto development environment, please refer to steps 0 and 1 in[Getting Started](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/../../docs/documentation/getting-started.zh-CN.md) for configuration, or you can use the [online sandbox or container](../../docs/documentation/getting-started.zh-CN.md#other-usage-methods) provided by Pluto for experience.
+If you have not configured the Pluto development environment, please refer to steps 0 and 1 in [Getting Started](/documentation/getting-started.en.md) for configuration, or you can use the [online sandbox or container](/documentation/getting-started.en.md#alternative-usage-methods) provided by Pluto for experience.
 
 ## Developing LangServe Application
 
@@ -347,7 +347,7 @@ asyncio.run(main())
 The following figure shows the result of executing the Python client code:
 
 <p align="center">
-   <img src="/assets/pyclient.png" alt="Python Client Result" width="80%"/>
+   <img src="/assets/deploy-langserve-to-aws/pyclient.png" alt="Python Client Result" width="80%"/>
 </p>
 
 The modified TypeScript client code is as follows, please replace the `<your-api-gateway-url>` in the code with the URL output by Pluto:
@@ -380,7 +380,7 @@ curl --location --request POST '<your-api-gateway-url>/joke/invoke' \
 The following figure shows the result of executing the curl command:
 
 <p align="center">
-   <img src="/assets/curl.png" alt="Curl Result" width="60%"/>
+   <img src="/assets/deploy-langserve-to-aws/curl.png" alt="Curl Result" width="60%"/>
 </p>
 
 ### Access Playground via Browser
@@ -412,8 +412,8 @@ After modifying and deploying, you can access the Playground of the sample appli
 The two figures below show the results of accessing the Playground of OpenAI and Joke through the browser, respectively:
 
 <p align="center">
-   <img src="/assets/openai-playground.png" alt="OpenAI Playground" width="45%"/>
-   <img src="/assets/joke-playground.png" alt="Joke Playground" width="45%"/>
+   <img src="/assets/deploy-langserve-to-aws/openai-playground.png" alt="OpenAI Playground" width="45%"/>
+   <img src="/assets/deploy-langserve-to-aws/joke-playground.png" alt="Joke Playground" width="45%"/>
 </p>
 
 ## Cleanup

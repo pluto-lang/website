@@ -9,7 +9,7 @@ This guide consists of **4** parts:
 3. **`pluto` Architecture**: Contains an introduction to the architecture of the compiler and a detailed introduction to each compilation process.
 4. **Appendices**: There are a few of these with different information, including a glossary.
 
-The Guide itself is of course open-source as well, and the sources can be found at the [GitHub repository](https://github.com/pluto-lang/pluto/tree/main/docs/dev_guide). If you find any mistakes in the guide, please file an issue about it. Even better, open a Github Pull Request (PR) with a correction!
+The Guide itself is of course open-source as well, and the sources can be found at the [GitHub repository](/dev_guide). If you find any mistakes in the guide, please file an issue about it. Even better, open a Github Pull Request (PR) with a correction!
 
 If you do contribute to the guide, please see the corresponding subsection on writing documentation in this guide.
 

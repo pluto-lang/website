@@ -5,7 +5,7 @@ description: 使用 Router、Queue、KVStore 构建一个简单的 Web 应用，
 
 # 使用 Router、Queue、KVStore 的简单 Web 应用 - Python
 
-这[快速开始](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/../../docs/documentation/getting-started.zh-CN.md)中 Python 版本的示例 Pluto 应用，你可以从[这里](./)获取完整的代码。
+这是[快速开始](/documentation/getting-started.zh-CN.md)中 Python 版本的示例 Pluto 应用，你可以从[这里](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/)获取完整的代码。
 
 这个应用整体架构如下图，主要有 2 个路由：1）`/hello`，产生一个时间戳，并将这个时间戳发布到消息队列；2）`/store`，从 KV 数据库中获取上次访问 `/hello` 的时间戳，并返回。消息队列会有一个订阅者，将消息保存到 KV 数据库中。这个应用部署被部署到 AWS 或 Kubernetes 上。
 
@@ -15,7 +15,7 @@ description: 使用 Router、Queue、KVStore 构建一个简单的 Web 应用，
 
 ## 0 环境
 
-如果你还没有配置 Pluto 开发环境，请参[快速开始](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/../../docs/documentation/getting-started.zh-CN.md)中的第 0、1 步进行配置，也可以使用 Pluto 提供的[在线沙盒或容器](../../docs/documentation/getting-started.zh-CN.md#其他使用方式)体验。
+如果你还没有配置 Pluto 开发环境，请参考[快速开始](/documentation/getting-started.zh-CN.md)中的第 0、1 步进行配置，也可以使用 Pluto 提供的[在线沙盒或容器](/documentation/getting-started.zh-CN.md#其他使用方式)体验。
 
 ## 1 编写
 
@@ -49,7 +49,7 @@ aws_secret_access_key = <your_secret_access_key>
 
 此外，Pluto 会尝试读取你的 AWS 配置文件 `~/.aws/config` 以获取默认的 AWS Region，如果没有配置，会尝试从环境变量 `AWS_REGION` 获取。**如果两者都没有配置，Pluto 在部署时将会报错。**
 
-如果你选择的目标平台为 Kubernetes，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根[这篇文档](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/../../docs/dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
+如果你选择的目标平台为 Kubernetes，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根据[这篇文档](/dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
 
 配置完成后，只需要执行下面这一条命令就能将应用发布到最初配置的云平台上：
 

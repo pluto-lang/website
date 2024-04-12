@@ -5,7 +5,7 @@ description: A simple web application built using Router, Queue, and KVStore, in
 
 # Simple Web Application Using Router, Queue, and KVStore - TypeScript
 
-This is a TypeScript version of the example Pluto application in the[Quick Start](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart/../../docs/documentation/getting-started.en.md) guide. You can grab the full code from [here](./).
+This is a TypeScript version of the example Pluto application in the [Quick Start](/documentation/getting-started.en.md) guide. You can grab the full code from [here](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart/).
 
 The application we're developing is called Timestamp Store. The overall architecture of this web application is shown in the diagram below. It mainly has two routes: 1) `/hello`, which generates a timestamp and publishes it to the message queue; 2) `/store`, which retrieves the last timestamp of accessing `/hello` from the KV database and returns it. The message queue will have a subscriber that saves the message to the KV database. This application can be deployed on AWS or Kubernetes.
 
@@ -15,7 +15,7 @@ The application we're developing is called Timestamp Store. The overall architec
 
 ## 0 Prerequisites
 
-If you haven't set up your Pluto development environment yet, please refer to steps 0 and 1 in the[Quick Start](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart/../../docs/documentation/getting-started.en.md) guide for configuration. Alternatively, you can try out Pluto's [online sandbox or container](../../docs/documentation/getting-started.en.md#alternative-usage-methods).
+If you haven't set up your Pluto development environment yet, please refer to steps 0 and 1 in the [Quick Start](/documentation/getting-started.en.md) guide for configuration. Alternatively, you can try out Pluto's [online sandbox or container](/documentation/getting-started.en.md#alternative-usage-methods).
 
 ## 1 Writing Code
 
@@ -47,7 +47,7 @@ aws_secret_access_key = <your_secret_access_key>
 
 In addition, Pluto will try to read your AWS configuration file `~/.aws/config` to get the default AWS Region. If there is no configuration, it will attempt to get it from the environment variable `AWS_REGION`. **If neither is configured, Pluto will return an error during the deployment.**
 
-If your chosen target platform is Kubernetes, it is necessary to install Knative in K8s beforehand and turn off the auto-scaling to zero feature (because Pluto does not yet support Ingress forwarding to Knative serving, improvements are welcome). You can configure the required Kubernetes environment according to[this document](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart/../../docs/dev_guide/setup-k8s-dev-env.en.md).
+If your chosen target platform is Kubernetes, it is necessary to install Knative in K8s beforehand and turn off the auto-scaling to zero feature (because Pluto does not yet support Ingress forwarding to Knative serving, improvements are welcome). You can configure the required Kubernetes environment according to [this document](/dev_guide/setup-k8s-dev-env.en.md).
 
 After the configuration is complete, simply execute the following command to deploy the application to the initially configured cloud platform:
 

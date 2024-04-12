@@ -1,5 +1,10 @@
 <p align="center"> 
     <img src="assets/pluto-logo.png" width="250">
+    <br/>
+    <br/>
+   <a href="./README.md"> English </a> 
+   | 
+   <a href="./README_zh.md"> 简体中文 </a>
 </p>
 
 <p align="center">
@@ -80,15 +85,15 @@ pluto deploy     # Deploy with one click!
 ⚠️ **Note:**
 
 - If the target platform is AWS, Pluto attempts to read your AWS configuration file to acquire the default AWS Region, or alternatively, tries to fetch it from the environment variable `AWS_REGION`. **Deployment will fail if neither is set.**
-- If the target platform is Kubernetes, Knative must firstly be installed within K8s and the scale-to-zero feature should be deactivated (as Pluto doesn't yet support Ingress forwarding to Knative serving). You can configure the required Kubernetes environment following [this document](dev_guide/setup-k8s-dev-env.en.md).
+- If the target platform is Kubernetes, Knative must firstly be installed within K8s and the scale-to-zero feature should be deactivated (as Pluto doesn't yet support Ingress forwarding to Knative serving). You can configure the required Kubernetes environment following [this document](/dev_guide/setup-k8s-dev-env.en.md).
 
-For detailed steps, refer to the [Getting Started Guide](documentation/getting-started.en.md).
+For detailed steps, refer to the [Getting Started Guide](/documentation/getting-started.en.md).
 
 > Currently, Pluto only supports single-file configurations. Inside each handler function, access is provided to literal constants and plain functions outside of the handler's scope; however, Python allows direct access to classes, interfaces, etc., outside of the scope, whereas TypeScript requires encapsulating these within functions for access.
 
 ## 🤯 Pain Points
 
-[Here you can find out why Pluto was created](documentation/what-problems-pluto-aims-to-address.en.md). To put it simply, we aim to address several pain points you might often encounter:
+[Here you can find out why Pluto was created](/documentation/what-problems-pluto-aims-to-address.en.md). To put it simply, we aim to address several pain points you might often encounter:
 
 - **High learning curve**: Developing a cloud application requires mastery of both the business and infrastructure skills, and it often demands significant efforts in testing and debugging. Thus, developers spend a considerable amount of energy on aspects beyond writing the core business logic.
 - **High cognitive load**: With cloud service providers offering hundreds of capabilities and Kubernetes offering nearly limitless possibilities, average developers often lack a deep understanding of cloud infrastructure, making it challenging to choose the proper architecture for their particular needs.
@@ -114,7 +119,7 @@ Overall, the Pluto deployment process comprises three stages—deduction, genera
 2. **Generation Phase**: The generator creates IaC code that is independent of user code, guided by the architecture reference.
 3. **Deployment Phase**: Depending on the IaC code type, Pluto invokes the corresponding adapter, which, in turn, works with the respective IaC engine to execute the IaC code, managing infrastructure configuration and application deployment.
 
-Components such as the deducer, generator, and adapter are extendable, which allows support for a broader range of programming languages and platform integration methods. Currently, Pluto provides deducers for [Python](https://github.com/pluto-lang/pluto/tree/main/components/deducers/python-pyright) and [TypeScript](https://github.com/pluto-lang/pluto/tree/main/components/deducers/static), and a [generator](https://github.com/pluto-lang/pluto/tree/main/components/generators/static) and [adapter](https://github.com/pluto-lang/pluto/tree/main/components/adapters/pulumi) for Pulumi. Learn more about Pluto's processes in detail in [this document](documentation/how-pluto-works.en.md).
+Components such as the deducer, generator, and adapter are extendable, which allows support for a broader range of programming languages and platform integration methods. Currently, Pluto provides deducers for [Python](https://github.com/pluto-lang/pluto/tree/main/components/deducers/python-pyright) and [TypeScript](https://github.com/pluto-lang/pluto/tree/main/components/deducers/static), and a [generator](https://github.com/pluto-lang/pluto/tree/main/components/generators/static) and [adapter](https://github.com/pluto-lang/pluto/tree/main/components/adapters/pulumi) for Pulumi. Learn more about Pluto's processes in detail in [this document](/documentation/how-pluto-works.en.md).
 
 ## 🤔️ Differences from Other Projects?
 
@@ -126,11 +131,11 @@ Pluto distinguishes itself from other offerings by **leveraging static program a
 - Unlike **IfC (Infrastructure from Code) products based purely on annotations** like Klotho, Pluto infers resource dependencies directly from user code, eliminating the need for extra annotations.
 - Different from other **IfC products that rely on dynamic analysis**, like Shuttle, Nitric, and Winglang, Pluto employs static program analysis to identify application resource dependencies, generating independent infrastructure code without having to execute user code.
 
-You can learn more about the differences with other projects in [this document](documentation/whats-different.en.md).
+You can learn more about the differences with other projects in [this document](/documentation/whats-different.en.md).
 
 ## 👏 Contributing
 
-Pluto is still in its infancy, and we warmly welcome contributions from those who are interested. Any suggestions or ideas about the issues Pluto aims to solve, the features it offers, or its code implementation can be shared and contributed to the community. Please refer to our [project contribution guide](dev_guide/dev_guide.en.md) for more information.
+Pluto is still in its infancy, and we warmly welcome contributions from those who are interested. Any suggestions or ideas about the issues Pluto aims to solve, the features it offers, or its code implementation can be shared and contributed to the community. Please refer to our [project contribution guide](/dev_guide/dev_guide.en.md) for more information.
 
 ## 🐎 Roadmap
 

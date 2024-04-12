@@ -9,7 +9,7 @@ description: 使用 Pluto 部署 LangServe 应用到 AWS 上，通过 Api Gatewa
 
 [LangServe](https://github.com/langchain-ai/langserve) 是 LangChain 的一个子项目，可以帮助开发者通过 REST API 部署 LangChain 的 Runnable 和 Chain。同时，它还提供了一个用于调用部署在服务器上的 Runnable 的客户端类，包括 Python、TypeScript 等多个版本，以及默认提供 Playground 供部署后直接在线试用。
 
-可以[这里](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/./)获取本示例的全部代码，[这个链接](https://codesandbox.io/p/devbox/deploy-langserve-application-to-aws-csj8wj)提供了本示例应用的在线 IDE，点击右上角 Fork 按钮即可创建你自己的开发环境，然后你就可以直接在浏览器中修改代码并部署到 AWS 上了。
+可以从[这里](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/)获取本示例的全部代码，[这个链接](https://codesandbox.io/p/devbox/deploy-langserve-application-to-aws-csj8wj)提供了本示例应用的在线 IDE，点击右上角 Fork 按钮即可创建你自己的开发环境，然后你就可以直接在浏览器中修改代码并部署到 AWS 上了。
 
 **⚠️注意：**
 
@@ -18,7 +18,7 @@ description: 使用 Pluto 部署 LangServe 应用到 AWS 上，通过 Api Gatewa
 
 ## 环境准备
 
-如果你还没有配置 Pluto 开发环境，请参[快速开始](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws/../../docs/documentation/getting-started.zh-CN.md)中的第 0、1 步进行配置，也可以使用 Pluto 提供的[在线 IDE 或容器](../../docs/documentation/getting-started.zh-CN.md#其他使用方式)体验。
+如果你还没有配置 Pluto 开发环境，请参考[快速开始](/documentation/getting-started.zh-CN.md)中的第 0、1 步进行配置，也可以使用 Pluto 提供的[在线 IDE 或容器](/documentation/getting-started.zh-CN.md#其他使用方式)体验。
 
 - 在线 IDE：
   - [Python 模板应用 | CodeSandbox](https://codesandbox.io/p/devbox/github/pluto-lang/codesandbox/tree/main/python?file=/README_zh.md)
@@ -353,7 +353,7 @@ asyncio.run(main())
 下面这幅图展示了执行 Python 客户端代码的结果：
 
 <p align="center">
-   <img src="/assets/pyclient.png" alt="Python Client Result" width="80%"/>
+   <img src="/assets/deploy-langserve-to-aws/pyclient.png" alt="Python Client Result" width="80%"/>
 </p>
 
 修改后的 TypeScript 客户端代码如下，请将代码中的 `<your-api-gateway-url>` 替换为 Pluto 输出的 URL：
@@ -386,7 +386,7 @@ curl --location --request POST '<your-api-gateway-url>/joke/invoke' \
 下面这幅图展示了执行 curl 命令的结果：
 
 <p align="center">
-   <img src="/assets/curl.png" alt="Curl Result" width="60%"/>
+   <img src="/assets/deploy-langserve-to-aws/curl.png" alt="Curl Result" width="60%"/>
 </p>
 
 ### 通过浏览器访问 Playground
@@ -418,8 +418,8 @@ add_routes(
 下面左右两幅图分别展示了通过浏览器访问 OpenAI 和 Joke 的 Playground 的结果：
 
 <p align="center">
-   <img src="/assets/openai-playground.png" alt="OpenAI Playground" width="45%"/>
-   <img src="/assets/joke-playground.png" alt="Joke Playground" width="45%"/>
+   <img src="/assets/deploy-langserve-to-aws/openai-playground.png" alt="OpenAI Playground" width="45%"/>
+   <img src="/assets/deploy-langserve-to-aws/joke-playground.png" alt="Joke Playground" width="45%"/>
 </p>
 
 ## 清理

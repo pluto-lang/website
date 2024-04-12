@@ -1,5 +1,10 @@
 <p align="center"> 
     <img src="assets/pluto-logo.png" width="250">
+    <br/>
+    <br/>
+   <a href="./README.md"> English </a> 
+   | 
+   <a href="./README_zh.md"> 简体中文 </a>
 </p>
 
 <p align="center">
@@ -78,15 +83,15 @@ pluto deploy     # 一键部署！
 ⚠️ **注意：**
 
 - 如果目标平台为 AWS，Pluto 会尝试读取你的 AWS 配置文件以获取默认的 AWS Region，如果没有配置，会尝试从环境变量 `AWS_REGION` 获取。**如果两者都没有配置，Pluto 在部署时将会报错。**
-- 如果目标平台为 Kubernetes，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根据[这篇文档](dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
+- 如果目标平台为 Kubernetes，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根据[这篇文档](/dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
 
-详细步骤可以参考[上手指南](documentation/getting-started.zh-CN.md)。
+详细步骤可以参考[上手指南](/documentation/getting-started.zh-CN.md)。
 
 > 目前，Pluto 只支持单文件。在每个处理程序函数中，支持访问处理程序函数作用域之外的字面量常量与普通函数，Python 支持直接访问作用域外的类、接口等，TypeScript 需要将类、接口封装到函数中才能访问。
 
 ## 🤯 痛点
 
-[从这里可以了解我们为什么要做 Pluto](documentation/what-problems-pluto-aims-to-address.zh-CN.md)，简单讲，我们想解决几个你或许经常遇到的痛点。
+[从这里可以了解我们为什么要做 Pluto](/documentation/what-problems-pluto-aims-to-address.zh-CN.md)，简单讲，我们想解决几个你或许经常遇到的痛点。
 
 - **上手门槛高**：开发一个云应用程序需要同时掌握业务与基础设施两种技术栈，同时又很难测试和调试，导致开发者在编写业务之外耗费了大量精力。
 - **认知成本高**：目前云服务提供商提供了数百种能力选项，Kubernetes 更是有无穷尽的能力组合，普通开发者通常对云没有足够的理解与认知，难以针对自身的业务确定一个合适的架构选型。
@@ -112,7 +117,7 @@ pluto deploy     # 一键部署！
 2. 生成阶段：生成器（Generator）会依据 arch ref 生成一份独立于用户代码的 IaC 代码。
 3. 部署阶段：根据不同的 IaC 代码类型，Pluto 会调用相应的适配器（Adapter），进而与相应 IaC 引擎配合执行 IaC 代码，完成基础设施资源配置与应用程序部署。
 
-其中，推导器、生成器、适配器都是可扩展的，以此来支持更多不同的编程语言、平台接入方式等，目前，Pluto 提供 [Python](https://github.com/pluto-lang/pluto/tree/main/components/deducers/python-pyright) 和 [TypeScript](https://github.com/pluto-lang/pluto/tree/main/components/deducers/static) 两种语言的推导器，以及面向 Pulumi 的[生成器](https://github.com/pluto-lang/pluto/tree/main/components/generators/static)和[适配器](https://github.com/pluto-lang/pluto/tree/main/components/adapters/pulumi)。可以在[这篇文章](documentation/how-pluto-works.zh-CN.md)中详细了解 Pluto 的工作流程。
+其中，推导器、生成器、适配器都是可扩展的，以此来支持更多不同的编程语言、平台接入方式等，目前，Pluto 提供 [Python](https://github.com/pluto-lang/pluto/tree/main/components/deducers/python-pyright) 和 [TypeScript](https://github.com/pluto-lang/pluto/tree/main/components/deducers/static) 两种语言的推导器，以及面向 Pulumi 的[生成器](https://github.com/pluto-lang/pluto/tree/main/components/generators/static)和[适配器](https://github.com/pluto-lang/pluto/tree/main/components/adapters/pulumi)。可以在[这篇文章](/documentation/how-pluto-works.zh-CN.md)中详细了解 Pluto 的工作流程。
 
 ## 🤔️ 与其他项目的不同?
 
@@ -124,11 +129,11 @@ Pluto 与其他产品的关键区别在于：它利用静态程序分析技术�
 - 与基于纯注释的 IfC（Infrastructure from Code）产品（如 Klotho）相比，Pluto 直接从用户代码中推导资源依赖，无需额外的注释。
 - 与基于动态分析的 IfC 产品（如 Shuttle、Nitric、Winglang）相比，Pluto 通过静态程序分析获取应用的资源依赖，并生成独立于用户代码的基础设施代码，无需执行用户代码。
 
-可以在[这篇文档](documentation/whats-different.zh-CN.md)中详细了解与其他产品的不同之处。
+可以在[这篇文档](/documentation/whats-different.zh-CN.md)中详细了解与其他产品的不同之处。
 
 ## 👏 参与贡献
 
-Pluto 目前还处于早期阶段，欢迎感兴趣的人参与贡献，无论是对 Pluto 要解决的问题、提供的特性，还是代码实现有任何建议或者想法，都可以参与到社区进行共建。[项目贡献指南](dev_guide/dev_guide.en.md)。
+Pluto 目前还处于早期阶段，欢迎感兴趣的人参与贡献，无论是对 Pluto 要解决的问题、提供的特性，还是代码实现有任何建议或者想法，都可以参与到社区进行共建。[项目贡献指南](/dev_guide/dev_guide.en.md)。
 
 ## 🐎 路线规划
 
