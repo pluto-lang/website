@@ -96,8 +96,6 @@ async function constructDocumentation() {
   // Copy docs and README to 'pages' directory.
   fs.ensureDirSync("pages");
   fs.copySync("pluto/docs/", "pages/");
-  fs.copyFileSync("pluto/README.md", "pages/index.en.md");
-  fs.copyFileSync("pluto/README_zh.md", "pages/index.zh-CN.md");
 
   // Adjust some content to better fit the website.
   for (const filepath of await glob.glob("pages/**/*.+(md|mdx)")) {
@@ -109,15 +107,6 @@ async function constructDocumentation() {
     content = content.replace(/src="((\.+\/)+)public\/assets/g, 'src="/assets');
     fs.writeFileSync(filepath, content, "utf8");
   }
-
-  modifyReadme("pages/index.en.md");
-  modifyReadme("pages/index.zh-CN.md");
-}
-
-function modifyReadme(filepath) {
-  let content = fs.readFileSync(filepath, "utf8");
-  // Disable the modification of website language through links in the text.
-  content = content.replace(/\s*<br\/>\s*.*?简体中文 <\/a>/gs, "");
 }
 
 async function replaceDocLinksInWebsite() {

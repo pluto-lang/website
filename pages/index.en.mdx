@@ -1,18 +1,66 @@
-<p align="center"> 
-    <img src="assets/pluto-logo.png" width="250">
-    <br/>
-    <br/>
-   <a href="./README.md"> English </a> 
-   | 
-   <a href="./README_zh.md"> 简体中文 </a>
-</p>
+---
+title: Simplify Cloud and AI App Development
+---
 
-<p align="center">
-  <a href="https://join.slack.com/t/plutolang/shared_invite/zt-25gztklfn-xOJ~Xvl4EjKJp1Zn1NNpiw"><img alt="slack" src="https://img.shields.io/badge/Join%20Our%20Community-Slack-blue?style=flat-square"></a>
-  <a href="https://github.com/pluto-lang/pluto/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/pluto-lang/pluto?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/@plutolang/cli"><img alt="npm version" src="https://img.shields.io/npm/v/%40plutolang%2Fcli?style=flat-square&logo=npm"></a>
-  <a href="https://www.npmjs.com/package/@plutolang/cli"><img alt="npm download" src="https://img.shields.io/npm/dm/%40plutolang/cli?style=flat-square"></a>
-</p>
+import Link from "next/link";
+import { Tabs, WrapContent } from "../components/Tabs";
+
+<div align="center" style={{ marginTop: "30px" }}>
+  <img src="/assets/pluto-logo.png" width="250" />
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <Link
+      href="/"
+      locale="en"
+      style={{ marginRight: "10px" }}
+      className="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]"
+    >
+      English
+    </Link>
+    <span> | </span>
+    <Link
+      href="/"
+      locale="zh-CN"
+      style={{ marginLeft: "10px" }}
+      className="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]"
+    >
+      简体中文
+    </Link>
+  </div>
+</div>
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "10px",
+    marginTop: "10px",
+  }}
+>
+  <a href="https://join.slack.com/t/plutolang/shared_invite/zt-25gztklfn-xOJ~Xvl4EjKJp1Zn1NNpiw">
+    <img
+      alt="slack"
+      src="https://img.shields.io/badge/Join%20Our%20Community-Slack-blue?style=flat-square"
+    />
+  </a>
+  <a href="https://github.com/pluto-lang/pluto/blob/main/LICENSE">
+    <img
+      alt="license"
+      src="https://img.shields.io/github/license/pluto-lang/pluto?style=flat-square"
+    />
+  </a>
+  <a href="https://www.npmjs.com/package/@plutolang/cli">
+    <img
+      alt="npm version"
+      src="https://img.shields.io/npm/v/%40plutolang%2Fcli?style=flat-square&logo=npm"
+    />
+  </a>
+  <a href="https://www.npmjs.com/package/@plutolang/cli">
+    <img
+      alt="npm download"
+      src="https://img.shields.io/npm/dm/%40plutolang/cli?style=flat-square"
+    />
+  </a>
+</div>
 
 Pluto is a development tool dedicated to helping developers **build cloud and AI applications more conveniently**, resolving issues such as the challenging deployment of AI applications and open-source models.
 
@@ -25,7 +73,7 @@ Developers are able to write applications in familiar programming languages like
 Let's develop a text generation application based on GPT2, where the user input is processed by the GPT2 model to generate and return text. Below is how the development process with Pluto looks:
 
 <p align="center">
-  <img src="/assets/readme-gpt2-process.png" alt="GPT2 Process" width="90%">
+  <img src="/assets/readme-gpt2-process.png" alt="GPT2 Process" width="90%" />
 </p>
 
 AWS SageMaker is utilized as the model deployment platform, and AWS Api Gateway and Lambda support the application's HTTP services. The deployed application architecture, as shown in the top right graphic ↗️, comprises two route handling functions: one to receive user input, invoke the SageMaker model, and return generated text, and another to provide the endpoint URL of the SageMaker model.
@@ -49,15 +97,32 @@ Finally, Pluto hands back the URL of the Api Gateway, providing direct access to
 
 ## 🚀 Quick Start
 
-<b style="color: green;">Online Experience</b>: [CodeSandbox](https://codesandbox.io) provides an online development environment. We have constructed Pluto templates in both [Python](https://codesandbox.io/p/devbox/github/pluto-lang/codesandbox/tree/main/python?file=/README.md) and [TypeScript](https://codesandbox.io/p/devbox/github/pluto-lang/codesandbox/tree/main/typescript?file=/README.md) languages on this platform, **allowing direct experience in the browser**. After opening the project template, creating your own project is as easy as clicking the Fork button in the top right corner. The environment is pre-equipped with AWS CLI, Pulumi, and Pluto's basic dependencies, adhering to the README for operations.
+<b style={{ color: "green" }}>Online Experience</b>:
+[CodeSandbox](https://codesandbox.io) provides an online development
+environment. We have constructed Pluto templates in both
+[Python](https://codesandbox.io/p/devbox/github/pluto-lang/codesandbox/tree/main/python?file=/README.md)
+and
+[TypeScript](https://codesandbox.io/p/devbox/github/pluto-lang/codesandbox/tree/main/typescript?file=/README.md)
+languages on this platform, **allowing direct experience in the browser**. After
+opening the project template, creating your own project is as easy as clicking
+the Fork button in the top right corner. The environment is pre-equipped with
+AWS CLI, Pulumi, and Pluto's basic dependencies, adhering to the README for
+operations.
 
-<b style="color: green;">Container Experience</b>: We offer a container image `plutolang/pluto:latest` for application development, which contains essential dependencies like AWS CLI, Pulumi, and Pluto, along with Node.js 20.x and Python 3.10 environments pre-configured. If you are interested in developing only TypeScript applications, you can use the `plutolang/pluto:latest-typescript` image. You can partake in Pluto development within a container using the following command:
+<b style={{ color: "green" }}>Container Experience</b>: We offer a container
+image `plutolang/pluto:latest` for application development, which contains
+essential dependencies like AWS CLI, Pulumi, and Pluto, along with Node.js 20.x
+and Python 3.10 environments pre-configured. If you are interested in developing
+only TypeScript applications, you can use the
+`plutolang/pluto:latest-typescript` image. You can partake in Pluto development
+within a container using the following command:
 
 ```shell
 docker run -it --name pluto-app plutolang/pluto:latest bash
 ```
 
-<b style="color: green;">Local Experience</b>: For local use, please follow these steps for setup:
+<b style={{ color: "green" }}>Local Experience</b>: For local use, please follow
+these steps for setup:
 
 ### 0. Install Pulumi
 
@@ -69,18 +134,50 @@ Pluto operates within a Node.js environment and uses Pulumi for interaction with
 npm install -g @plutolang/cli
 ```
 
-### 2. Deploy your application with Pluto
+### 2. Create and Deploy your application with Pluto
+
+You can use Pluto to develop applications in Python or TypeScript languages. Here's a simple example:
+
+<Tabs tabs={["Python", "TypeScript"]}>
+
+<WrapContent>
 
 ```shell
-pluto new        # Interactively create a new project, allowing selection of TypeScript or Python
-cd <project_dir> # Enter your project directory
-npm install      # Download dependencies
+# 1. Create a Pluto project
+pluto new -l python  # Interactively create a new project
+cd <project_dir>
 
-# If it's a Python project, in addition to npm install, Python dependencies must also be installed.
+# 2. Install dependencies
+npm install
 pip install -r requirements.txt
 
-pluto deploy     # Deploy with one click!
+# 3. Write your application code in the `app/main.py` file.
+
+# 4. Deploy with one click!
+pluto deploy
 ```
+
+</WrapContent>
+
+<WrapContent>
+
+```shell
+# 1. Create a Pluto project
+pluto new -l typescript  # Interactively create a new project
+cd <project_dir>         # Enter your project directory
+
+# 2. Install dependencies
+npm install
+
+# 3. Write your application code in the `src/index.ts` file.
+
+# 4. Deploy with one click!
+pluto deploy
+```
+
+</WrapContent>
+
+</Tabs>
 
 ⚠️ **Note:**
 
@@ -110,7 +207,7 @@ For detailed steps, refer to the [Getting Started Guide](/documentation/getting-
 ## 🔧 How Does Pluto Work?
 
 <p align="center">
-  <img src="/assets/pluto-arch.jpg" alt="Pluto Architecture" width="750">
+  <img src="/assets/pluto-arch.jpg" alt="Pluto Architecture" width="750" />
 </p>
 
 Overall, the Pluto deployment process comprises three stages—deduction, generation, and deployment:

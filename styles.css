@@ -1,3 +1,36 @@
+/* Copied from codesandbox/docs */
+
+:root {
+  --brand-primary-base: #edffa5;
+  --brand-primary-opacity: #edffa580;
+
+  --brand-secondary-low: #463ecf;
+  --brand-secondary-base: #ac9cff;
+  --brand-secondary-opacity: #ac9cff80;
+
+  --neutral-dark-base: #151515;
+  --neutral-dark-medium: #252525;
+  --neutral-dark-high: #343434;
+  --neutral-dark-opacity: #ffffff16;
+
+  --neutral-light-base: #999999;
+  --neutral-light-medium: #c2c2c2;
+  --neutral-light-high: #f5f5f5;
+  --neutral-light-opacity: #00000016;
+}
+
+html[class~="dark"] {
+  --color-accent: var(--brand-primary-base);
+  --color-accent-opacity: var(--brand-primary-opacity);
+  --color-highlight: var(--brand-secondary-base);
+}
+
+html[class~="light"] {
+  --color-accent: var(--brand-secondary-low);
+  --color-accent-opacity: var(--brand-secondary-opacity);
+  --color-highlight: var(--brand-secondary-low);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
