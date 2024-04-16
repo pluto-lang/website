@@ -50,11 +50,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: PLUTO_MAIN_REPO_URL,
   footer: {
-    text: (
-      <>
-        The Pluto documentation.
-      </>
-    ),
+    text: <>The Pluto documentation.</>,
   },
   search: {
     placeholder: () => {
@@ -72,9 +68,12 @@ const config: DocsThemeConfig = {
     { locale: "zh-CN", text: "简体中文" },
   ],
   useNextSeoProps() {
-    return {
-      titleTemplate: "%s – Pluto",
-    };
+    const { asPath } = useRouter();
+    if (!asPath.startsWith("/index", 0)) {
+      return {
+        titleTemplate: "%s – Pluto",
+      };
+    }
   },
   editLink: {
     component: ({ children, ...props }) => {

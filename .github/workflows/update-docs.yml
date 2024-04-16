@@ -18,10 +18,13 @@ jobs:
           ref: main
       - name: Clone the Pluto main repository
         run: git clone https://github.com/pluto-lang/pluto.git
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Update docs
-        run: npm run update-docs
+        run: pnpm run update-docs
       - name: Remove the directory of the Pluto repository
         run: rm -rf pluto
       - name: Exit if no updates
