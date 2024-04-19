@@ -1,9 +1,9 @@
 ---
-title: Simplify Cloud and AI App Development
+title: Pluto - Simplify AI and Cloud App Development
 ---
 
 import Link from "next/link";
-import { Tabs, WrapContent } from "../components/Tabs";
+import { Callout, Tabs, Tab, Steps } from "nextra/components";
 
 <div align="center" style={{ marginTop: "30px" }}>
   <img src="/assets/pluto-logo.png" width="250" />
@@ -124,23 +124,25 @@ docker run -it --name pluto-app plutolang/pluto:latest bash
 <b style={{ color: "green" }}>Local Experience</b>: For local use, please follow
 these steps for setup:
 
-### 0. Install Pulumi
+<Steps>
+
+### Install Pulumi
 
 Pluto operates within a Node.js environment and uses Pulumi for interaction with cloud platforms (AWS or K8s). You can refer to the [Pulumi installation guide](https://www.pulumi.com/docs/install/).
 
-### 1. Install Pluto
+### Install Pluto
 
 ```shell
 npm install -g @plutolang/cli
 ```
 
-### 2. Create and Deploy your application with Pluto
+### Create your application with Pluto
 
 You can use Pluto to develop applications in Python or TypeScript languages. Here's a simple example:
 
-<Tabs tabs={["Python", "TypeScript"]}>
+<Tabs items={["Python", "TypeScript"]}>
 
-<WrapContent>
+<Tab>
 
 ```shell
 # 1. Create a Pluto project
@@ -150,16 +152,13 @@ cd <project_dir>
 # 2. Install dependencies
 npm install
 pip install -r requirements.txt
-
-# 3. Write your application code in the `app/main.py` file.
-
-# 4. Deploy with one click!
-pluto deploy
 ```
 
-</WrapContent>
+Once the project setup is complete, you can start developing your application code within the `app/main.py` file using your preferred editor.
 
-<WrapContent>
+</Tab>
+
+<Tab>
 
 ```shell
 # 1. Create a Pluto project
@@ -168,21 +167,51 @@ cd <project_dir>         # Enter your project directory
 
 # 2. Install dependencies
 npm install
-
-# 3. Write your application code in the `src/index.ts` file.
-
-# 4. Deploy with one click!
-pluto deploy
 ```
 
-</WrapContent>
+Once the project setup is complete, you can start developing your application code within the `src/index.ts` file using your preferred editor.
+
+</Tab>
 
 </Tabs>
 
-⚠️ **Note:**
+### Ready to Go!
 
-- If the target platform is AWS, Pluto attempts to read your AWS configuration file to acquire the default AWS Region, or alternatively, tries to fetch it from the environment variable `AWS_REGION`. **Deployment will fail if neither is set.**
-- If the target platform is Kubernetes, Knative must firstly be installed within K8s and the scale-to-zero feature should be deactivated (as Pluto doesn't yet support Ingress forwarding to Knative serving). You can configure the required Kubernetes environment following [this document](/dev_guide/setup-k8s-dev-env.en.md).
+Deploy with one click!
+
+<Tabs items={["AWS", "Kubernetes"]}>
+
+<Tab>
+
+```shell
+pluto deploy
+```
+
+<Callout>
+
+Pluto attempts to read your AWS configuration file to acquire the default AWS Region, or alternatively, tries to fetch it from the environment variable `AWS_REGION`. **Deployment will fail if neither is set.**
+
+</Callout>
+
+</Tab>
+
+<Tab>
+
+```shell
+pluto deploy
+```
+
+<Callout>
+
+Currently, Pluto only supports to deploy to Knative within Kubernetes. So, Knative must firstly be installed within K8s and the scale-to-zero feature should be deactivated (as Pluto doesn't yet support Ingress forwarding to Knative serving). You can configure the required Kubernetes environment following [this document](/dev_guide/setup-k8s-dev-env.en.md).
+
+</Callout>
+
+</Tab>
+
+</Tabs>
+
+</Steps>
 
 For detailed steps, refer to the [Getting Started Guide](/documentation/getting-started.en.md).
 

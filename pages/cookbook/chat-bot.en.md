@@ -1,5 +1,7 @@
 ---
-title: A Command Line Chatbot using OpenAI API
+title: A command-line chatbot using OpenAI API
+description: Creates a chatbot running in a command line terminal. The chatbot supports multiple sessions and automatically saves and restores sessions.
+tags: ["AWS", "TypeScript"]
 ---
 
 # A Command Line Chatbot using OpenAI API

@@ -1,9 +1,9 @@
 ---
-title: 简化云与 AI 应用开发
+title: Pluto - 简化 AI 与云应用开发
 ---
 
 import Link from "next/link";
-import { Tabs, WrapContent } from "../components/Tabs";
+import { Callout, Tabs, Tab, Steps } from "nextra/components";
 
 <div align="center" style={{ marginTop: "30px" }}>
   <img src="/assets/pluto-logo.png" width="250" />
@@ -116,23 +116,25 @@ docker run -it --name pluto-app plutolang/pluto:latest bash
 <b style={{ color: "green" }}>本地体验</b>
 ：如果你想在本地使用的话，请按照以下步骤配置：
 
-### 0. 安装 Pulumi
+<Steps>
+
+### 安装 Pulumi
 
 Pluto 运行在 Node.js 环境，并使用 Pulumi 与云平台（AWS 或 K8s）进行交互，可以参考 [Pulumi 安装指南进行安装](https://www.pulumi.com/docs/install/)。
 
-### 1. 安装 Pluto
+### 安装 Pluto
 
 ```shell
 npm install -g @plutolang/cli
 ```
 
-### 2. 开发并部署你的应用
+### 开发你的应用
 
 你可以使用 Pluto 开发 Python 或 TypeScript 语言的应用，以下是一个简单的示例：
 
-<Tabs tabs={["Python", "TypeScript"]}>
+<Tabs items={["Python", "TypeScript"]}>
 
-<WrapContent>
+<Tab>
 
 ```shell
 # 1. 创建一个 Python 语言的 Pluto 项目
@@ -142,16 +144,13 @@ cd <project_dir>
 # 2. 下载项目所需依赖
 npm install
 pip install -r requirements.txt
-
-# 3. 修改 `app/main.py` 文件，编写你的应用代码
-
-# 4. 一键部署！
-pluto deploy
 ```
 
-</WrapContent>
+完成初始化操作后，你就可以在你喜欢的编辑器修改 `app/main.py` 文件来开发你的应用程序代码了，可以使用任何你喜欢的编辑器。
 
-<WrapContent>
+</Tab>
+
+<Tab>
 
 ```shell
 # 1. 创建一个 TypeScript 语言的 Pluto 项目
@@ -160,21 +159,49 @@ cd <project_dir>
 
 # 2. 下载项目所需依赖
 npm install
-
-# 3. 修改 `src/index.ts` 文件，编写你的应用代码
-
-# 4. 一键部署！
-pluto deploy
 ```
 
-</WrapContent>
+完成初始化操作后，你就可以修改 `src/index.ts` 文件来开发你的应用程序代码了，可以使用任何你喜欢的编辑器。
+
+</Tab>
 
 </Tabs>
 
-⚠️ **注意：**
+### 一键部署！
 
-- 如果目标平台为 AWS，Pluto 会尝试读取你的 AWS 配置文件以获取默认的 AWS Region，如果没有配置，会尝试从环境变量 `AWS_REGION` 获取。**如果两者都没有配置，Pluto 在部署时将会报错。**
-- 如果目标平台为 Kubernetes，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根据[这篇文档](/dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
+<Tabs items={["AWS", "Kubernetes"]}>
+
+<Tab>
+
+```shell
+pluto deploy
+```
+
+<Callout>
+
+Pluto 会尝试读取你的 AWS 配置文件以获取默认的 AWS Region，如果没有配置，会尝试从环境变量 `AWS_REGION` 获取。**如果两者都没有配置，Pluto 在部署时将会报错。**
+
+</Callout>
+
+</Tab>
+
+<Tab>
+
+```shell
+pluto deploy
+```
+
+<Callout>
+
+目前，Pluto 只支持将应用部署到 Knative 环境。所以，需要事先在 K8s 中安装 Knative，并关闭缩容到零的功能（因为 Pluto 尚不支持 Ingress 转发到 Knative servering，欢迎大佬来改进）。你可以根据[这篇文档](/dev_guide/setup-k8s-dev-env.en.md)配置所需的 Kubernetes 环境。
+
+</Callout>
+
+</Tab>
+
+</Tabs>
+
+</Steps>
 
 详细步骤可以参考[上手指南](/documentation/getting-started.zh-CN.md)。
 

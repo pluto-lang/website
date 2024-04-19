@@ -1,5 +1,7 @@
 ---
-title: Building a Llama2 Conversational Chatbot with AWS and LangChain
+title: Building a Llama2 conversational chatbot with AWS and LangChain - TypeScript
+description: Create a simple conversational chatbot by integrating Pluto, AWS services, LangChain, and Llama2.
+tags: ["AWS", "TypeScript", "LangChain", "Llama2"]
 ---
 
 # Building a Llama2 Conversational Chatbot with AWS and LangChain

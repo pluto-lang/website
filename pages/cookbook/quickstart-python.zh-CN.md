@@ -1,6 +1,7 @@
 ---
 title: 使用 Router、Queue、KVStore 的简单 Web 应用 - Python
 description: 使用 Router、Queue、KVStore 构建一个简单的 Web 应用，涉及 HTTP 路由、消息队列订阅等功能，可以部署到 AWS 或 Kubernetes 上。
+tags: ["TypeScript", "AWS", "Kubernetes"]
 ---
 
 # 使用 Router、Queue、KVStore 的简单 Web 应用 - Python
