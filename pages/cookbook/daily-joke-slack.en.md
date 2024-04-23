@@ -1,7 +1,5 @@
 ---
-title: A joke bot for slack
-description: Creates a simple joke bot on AWS using the Slack WebAPI. The bot will send a daily joke to a specified channel.
-tags: ["AWS", "TypeScript"]
+title: A Joke Bot for Slack
 ---
 
 # A Joke Bot for Slack

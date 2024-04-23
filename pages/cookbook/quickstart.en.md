@@ -1,7 +1,6 @@
 ---
 title: Simple web application using router, queue, and kvstore - TypeScript
 description: A simple web application built using Router, Queue, and KVStore, involving HTTP routing, message queue subscription, etc., that can be deployed to AWS or Kubernetes.
-tags: ["TypeScript", "AWS", "Kubernetes"]
 ---
 
 # Simple Web Application Using Router, Queue, and KVStore - TypeScript
