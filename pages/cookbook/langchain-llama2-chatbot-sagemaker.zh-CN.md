@@ -1,5 +1,7 @@
 ---
-title: 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人
+title: 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人 - TypeScript
+description: 在本指南中，你将了解如何结合 Pluto、AWS 服务、LangChain 和 Llama2 构建一个简易的会话型聊天机器人。
+tags: ["AWS", "TypeScript", "LangChain", "Llama2"]
 ---
 
 # 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人

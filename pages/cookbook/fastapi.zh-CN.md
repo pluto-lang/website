@@ -1,5 +1,7 @@
 ---
 title: Pluto 部署 FastAPI 应用
+description: 这个示例应用程序展示了如何将 FastAPI 应用程序与 Pluto 结合使用。
+tags: ["AWS", "Python", "FastAPI"]
 ---
 
 # Pluto 部署 FastAPI 应用

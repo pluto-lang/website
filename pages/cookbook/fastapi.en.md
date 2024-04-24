@@ -1,5 +1,7 @@
 ---
-title: FastAPI with Pluto Example
+title: Deploying FastAPI application with Pluto
+description: This is an example application that shows how to adapt a FastAPI application with Pluto.
+tags: ["AWS", "Python", "FastAPI"]
 ---
 
 # FastAPI with Pluto Example
