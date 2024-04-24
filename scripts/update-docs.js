@@ -70,11 +70,10 @@ async function constructCookbook() {
         }
       }
 
-      // Replace `./assets/*` with `./assets/${exampleName}/*`. This change is
+      // Replace `./assets/*` with `/assets/${exampleName}/*`. This change is
       // needed because the assets get copied to the
-      // `public/assets/${exampleName}` directory, and these paths will be
-      // adjusted during the documentation build process.
-      content = content.replace(/(["\(]\.\/assets\/)/g, `$1${exampleName}/`);
+      // `public/assets/${exampleName}` directory.
+      content = content.replace(/(["\(])(\.\/)?assets\//g, `$1/assets/${exampleName}/`);
 
       const fileType = filename.split(".").pop();
       const langType = /_zh.mdx?$/g.test(filename) ? "zh-CN" : "en";
