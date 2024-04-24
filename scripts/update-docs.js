@@ -39,7 +39,7 @@ async function constructCookbook() {
       continue;
     }
 
-    const readmePaths = await glob.glob(`${exampleDir}/README*.md`);
+    const readmePaths = await glob.glob(`${exampleDir}/README*.+(md|mdx)`);
     if (readmePaths.length === 0) {
       continue;
     }
@@ -76,8 +76,9 @@ async function constructCookbook() {
       // adjusted during the documentation build process.
       content = content.replace(/(["\(]\.\/assets\/)/g, `$1${exampleName}/`);
 
-      const suffix = filename.endsWith("_zh.md") ? ".zh-CN.md" : ".en.md";
-      const newFilename = exampleName + suffix;
+      const fileType = filename.split(".").pop();
+      const langType = /_zh.mdx?$/g.test(filename) ? "zh-CN" : "en";
+      const newFilename = `${exampleName}.${langType}.${fileType}`;
       fs.writeFileSync(`pages/cookbook/${newFilename}`, content, "utf8");
     }
 
