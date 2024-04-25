@@ -34,6 +34,8 @@ async function constructCookbook() {
   fs.ensureDirSync("public/assets");
   fs.ensureDirSync("pages/cookbook");
 
+  const zhMeta = {};
+  const enMeta = {};
   for (const exampleDir of await glob.glob("pluto/examples/*")) {
     if (fs.statSync(exampleDir).isFile()) {
       continue;
@@ -79,6 +81,18 @@ async function constructCookbook() {
       const langType = /_zh.mdx?$/g.test(filename) ? "zh-CN" : "en";
       const newFilename = `${exampleName}.${langType}.${fileType}`;
       fs.writeFileSync(`pages/cookbook/${newFilename}`, content, "utf8");
+
+      if (langType === "zh-CN") {
+        zhMeta[exampleName] = getTitleFromContent(content);
+        if (readmePaths.length === 1) {
+          enMeta[exampleName] = { display: "hidden" };
+        }
+      } else {
+        enMeta[exampleName] = getTitleFromContent(content);
+        if (readmePaths.length === 1) {
+          zhMeta[exampleName] = { display: "hidden" };
+        }
+      }
     }
 
     // Copy assets from each example to the 'public/assets' directory.
@@ -89,7 +103,34 @@ async function constructCookbook() {
     }
   }
 
+  // Generate the metadata for the cookbook.
+  fs.writeFileSync(
+    `pages/cookbook/_meta.zh-CN.json`,
+    JSON.stringify(zhMeta, null, 2),
+    "utf8"
+  );
+  fs.writeFileSync(
+    `pages/cookbook/_meta.en.json`,
+    JSON.stringify(enMeta, null, 2),
+    "utf8"
+  );
+
   replaceDocLinksInWebsite();
+}
+
+function getTitleFromContent(content) {
+  // parse the front matter metadata
+  const frontMatter = content.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!frontMatter) {
+    return;
+  }
+  const metadata = frontMatter[1];
+
+  const titleMatch = metadata.match(/title:(.*)/);
+  if (!titleMatch) {
+    return;
+  }
+  return titleMatch[1].trim();
 }
 
 async function constructDocumentation() {

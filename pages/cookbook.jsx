@@ -47,7 +47,7 @@ function CookbookHeader() {
 }
 
 function CookbookTags({ setSelectedTags, selectedTags }) {
-  const pages = getPagesUnderRoute("/cookbook");
+  const pages = getPagesUnderRoute("/cookbook").filter(notHidden);
   const tags = pages.map((page) => flatTags(page.frontMatter?.tags)).flat();
   const uniqueTags = [];
   tags.forEach((tag) => {
@@ -106,7 +106,7 @@ function CookbookTags({ setSelectedTags, selectedTags }) {
 
 function CookbookIndex({ selectedTags }) {
   const cards = [];
-  const pages = getPagesUnderRoute("/cookbook");
+  const pages = getPagesUnderRoute("/cookbook").filter(notHidden);
   for (const page of pages) {
     const tags = flatTags(page.frontMatter?.tags);
     if (
@@ -163,4 +163,8 @@ function flatTags(tags) {
     }, []);
   }
   return flattenTags.map((t) => t.trim());
+}
+
+function notHidden(page) {
+  return !(page.meta?.display === "hidden");
 }

@@ -23,7 +23,7 @@ export function BlogHeader() {
 export function BlogIndex() {
   return getPagesUnderRoute("/blogs").map((page) => {
 
-    const externalLinks = page.frontMatter.href
+    const externalLinks = page.frontMatter?.href
       ? {
           href: page.frontMatter.href,
           target: "_blank",

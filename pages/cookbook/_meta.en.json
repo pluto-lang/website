@@ -1,1 +1,13 @@
-{}
+{
+  "rag-qa-bot-llama3": "Document-Q&A bot based on Llama3",
+  "quickstart-python": "Simple web application using router, queue, and kvstore - Python",
+  "quickstart": "Simple web application using router, queue, and kvstore - TypeScript",
+  "langchain-llama2-sagemaker": "Deploying LangChain application integrated with Llama2",
+  "langchain-llama2-chatbot-sagemaker-python": "Building a Llama2 conversational chatbot with AWS and LangChain - Python",
+  "langchain-llama2-chatbot-sagemaker": "Building a Llama2 conversational chatbot with AWS and LangChain - TypeScript",
+  "gpt2-hf-sagemaker": "Deploying GPT-2 large language model on AWS SageMaker",
+  "fastapi": "Deploying FastAPI application with Pluto",
+  "deploy-langserve-to-aws": "Deploy LangServe application to AWS",
+  "daily-joke-slack": "A joke bot for slack",
+  "chat-bot": "A command-line chatbot using OpenAI API"
+}

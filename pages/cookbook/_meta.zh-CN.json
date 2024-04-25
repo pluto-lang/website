@@ -1,1 +1,17 @@
-{}
+{
+  "rag-qa-bot-llama3": "基于 Llama3 的文档问答机器人",
+  "quickstart-python": "使用 Router、Queue、KVStore 的简单 Web 应用 - Python",
+  "quickstart": "使用 Router、Queue、KVStore 的简单 Web 应用 - TypeScript",
+  "langchain-llama2-sagemaker": "部署集成了 Llama2 的 LangChain 应用",
+  "langchain-llama2-chatbot-sagemaker-python": "基于 AWS 和 LangChain 的 Llama2 会话聊天机器人 - Python",
+  "langchain-llama2-chatbot-sagemaker": "基于 AWS 和 LangChain 的 Llama2 会话聊天机器人 - TypeScript",
+  "gpt2-hf-sagemaker": "在 AWS SageMaker 上部署 GPT2 大语言模型",
+  "fastapi": "Pluto 部署 FastAPI 应用",
+  "deploy-langserve-to-aws": "部署 LangServe 应用到 AWS",
+  "daily-joke-slack": {
+    "display": "hidden"
+  },
+  "chat-bot": {
+    "display": "hidden"
+  }
+}
