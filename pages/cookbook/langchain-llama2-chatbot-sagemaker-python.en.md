@@ -4,6 +4,11 @@ description: Create a simple conversational chatbot by integrating Pluto, AWS se
 tags: ["AWS", "Python", "LangChain", "Llama2"]
 ---
 
+
+**Tags**: #AWS #Python #LangChain #Llama2  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker-python](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker-python)
+
+--- 
 # Building a Llama2 Conversational Chatbot with AWS and LangChain
 
 The difference between this and the [TypeScript version of the Pluto example](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker/) lies in its implementation in Python.

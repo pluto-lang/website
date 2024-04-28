@@ -5,6 +5,11 @@ deployUrl: https://codesandbox.io/p/devbox/deploy-langserve-application-to-aws-c
 tags: ["AWS", "LangServe", "Python"]
 ---
 
+
+**Tags**: #AWS #LangServe #Python  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws](https://github.com/pluto-lang/pluto/tree/main/examples/deploy-langserve-to-aws)
+
+--- 
 # 部署 LangServe 应用到 AWS
 
 **这篇指南将介绍如何通过 Pluto 将 LangServe 应用一键部署到 AWS 上，全程无需登陆 AWS 控制台，只需准备好 AWS 访问凭证即可。**

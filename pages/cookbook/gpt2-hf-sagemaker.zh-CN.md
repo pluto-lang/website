@@ -4,6 +4,11 @@ description: 使用 Pluto 可以将 Hugging Face 上的 GPT2 模型轻松部署�
 tags: ["AWS", "TypeScript", "GPT2", "HuggingFace"]
 ---
 
+
+**Tags**: #AWS #TypeScript #GPT2 #HuggingFace  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/gpt2-hf-sagemaker](https://github.com/pluto-lang/pluto/tree/main/examples/gpt2-hf-sagemaker)
+
+--- 
 # 在 AWS SageMaker 上部署 GPT2 大语言模型
 
 使用 Pluto 可以将 Hugging Face 模型轻松部署到 AWS SageMaker 上，同时还能与 SNS、DynamoDB、Lambda、API Gateway 等其他 AWS 服务集成。

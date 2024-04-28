@@ -4,6 +4,11 @@ description: 使用 Router、Queue、KVStore 构建一个简单的 Web 应用，
 tags: ["TypeScript", "AWS", "Kubernetes"]
 ---
 
+
+**Tags**: #TypeScript #AWS #Kubernetes  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/quickstart](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart)
+
+--- 
 # 使用 Router、Queue、KVStore 的简单 Web 应用 - TypeScript
 
 这是[快速开始](/documentation/getting-started.zh-CN.mdx)中 TypeScript 版本的示例 Pluto 应用，你可以从[这里](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart/)获取完整的代码。

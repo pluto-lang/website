@@ -4,6 +4,11 @@ description: 在本指南中，你将了解如何结合 Pluto、AWS 服务、Lan
 tags: ["AWS", "Python", "LangChain", "Llama2"]
 ---
 
+
+**Tags**: #AWS #Python #LangChain #Llama2  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker-python](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker-python)
+
+--- 
 # 基于 AWS 和 LangChain 的 Llama2 会话聊天机器人
 
 与 [TypeScript 版本的 Pluto 示例](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker/)应用区别在于使用 Python 实现。

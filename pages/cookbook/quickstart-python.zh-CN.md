@@ -4,6 +4,11 @@ description: 使用 Router、Queue、KVStore 构建一个简单的 Web 应用，
 tags: ["Python", "AWS", "Kubernetes"]
 ---
 
+
+**Tags**: #Python #AWS #Kubernetes  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python)
+
+--- 
 # 使用 Router、Queue、KVStore 的简单 Web 应用 - Python
 
 这是[快速开始](/documentation/getting-started.zh-CN.mdx)中 Python 版本的示例 Pluto 应用，你可以从[这里](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/)获取完整的代码。

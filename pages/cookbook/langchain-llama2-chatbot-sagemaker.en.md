@@ -4,6 +4,11 @@ description: Create a simple conversational chatbot by integrating Pluto, AWS se
 tags: ["AWS", "TypeScript", "LangChain", "Llama2"]
 ---
 
+
+**Tags**: #AWS #TypeScript #LangChain #Llama2  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker](https://github.com/pluto-lang/pluto/tree/main/examples/langchain-llama2-chatbot-sagemaker)
+
+--- 
 # Building a Llama2 Conversational Chatbot with AWS and LangChain
 
 In this guide, you'll discover how to create a simple conversational chatbot by integrating Pluto, AWS services, LangChain, and Llama2. We’ll walk you through the architecture components of our example application and how to deploy and operate it using Pluto.

@@ -1,6 +1,7 @@
+const url = require("url");
 const glob = require("glob");
 const fs = require("fs-extra");
-const url = require("url");
+const yaml = require("js-yaml");
 
 async function main() {
   // Clean existing files.
@@ -54,14 +55,6 @@ async function constructCookbook() {
       const urlPrefix = `https://github.com/pluto-lang/pluto/tree/main/examples/${exampleName}`;
 
       let content = fs.readFileSync(readmePath, "utf8");
-      // // Replace relative links with absolute links to the GitHub repository.
-      const matches = content.matchAll(/([^!]\[.*?\])\(((\.+\/)+.*?)\)/g);
-      for (const match of matches) {
-        const prefixText = match[1];
-        const relativePath = match[2];
-        const absoluteLink = url.resolve(urlPrefix + "/", relativePath);
-        content = content.replace(match[0], `${prefixText}(${absoluteLink})`);
-      }
 
       // Add the title to the frontmatter.
       if (!content.trim().startsWith("---")) {
@@ -72,10 +65,39 @@ async function constructCookbook() {
         }
       }
 
+      // Fetch tags from frontmatter, and add the tags and code link before the H1 title.
+      const frontMatter = content.match(/^---\n([\s\S]*?)\n---\n/);
+      // parse the yaml
+      const metadata = yaml.load(frontMatter[1]);
+      const tags = metadata.tags || [];
+      const tagsString = tags.map((tag) => `#${tag}`).join(" ");
+      const codeLink = `[${urlPrefix}](${urlPrefix})`;
+      content = content.replace(
+        /^# (.*)$/m,
+        `
+**Tags**: ${tagsString}  
+**Code**: ${codeLink}
+
+--- 
+# $1`
+      );
+
+      // Replace relative links with absolute links to the GitHub repository.
+      const matches = content.matchAll(/([^!]\[.*?\])\(((\.+\/)+.*?)\)/g);
+      for (const match of matches) {
+        const prefixText = match[1];
+        const relativePath = match[2];
+        const absoluteLink = url.resolve(urlPrefix + "/", relativePath);
+        content = content.replace(match[0], `${prefixText}(${absoluteLink})`);
+      }
+
       // Replace `./assets/*` with `/assets/${exampleName}/*`. This change is
       // needed because the assets get copied to the
       // `public/assets/${exampleName}` directory.
-      content = content.replace(/(["\(])(\.\/)?assets\//g, `$1/assets/${exampleName}/`);
+      content = content.replace(
+        /(["\(])(\.\/)?assets\//g,
+        `$1/assets/${exampleName}/`
+      );
 
       const fileType = filename.split(".").pop();
       const langType = /_zh.mdx?$/g.test(filename) ? "zh-CN" : "en";

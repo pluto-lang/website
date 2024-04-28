@@ -4,6 +4,11 @@ description: Creates a chatbot running in a command line terminal. The chatbot s
 tags: ["AWS", "TypeScript"]
 ---
 
+
+**Tags**: #AWS #TypeScript  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/chat-bot](https://github.com/pluto-lang/pluto/tree/main/examples/chat-bot)
+
+--- 
 # A Command Line Chatbot using OpenAI API
 
 This article presents a Pluto example application that creates a chatbot running in a command line terminal. The chatbot supports multiple sessions and automatically saves and restores sessions.

@@ -4,6 +4,11 @@ description: A simple web application built using Router, Queue, and KVStore, in
 tags: ["Python", "AWS", "Kubernetes"]
 ---
 
+
+**Tags**: #Python #AWS #Kubernetes  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python)
+
+--- 
 # Simple Web Application Using Router, Queue, and KVStore - Python
 
 This is a Python version of the example Pluto application in the [Quick Start](/documentation/getting-started.en.mdx) guide. You can grab the full code from [here](https://github.com/pluto-lang/pluto/tree/main/examples/quickstart-python/).

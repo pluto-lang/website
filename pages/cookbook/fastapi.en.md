@@ -4,6 +4,11 @@ description: This is an example application that shows how to adapt a FastAPI ap
 tags: ["AWS", "Python", "FastAPI"]
 ---
 
+
+**Tags**: #AWS #Python #FastAPI  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/fastapi](https://github.com/pluto-lang/pluto/tree/main/examples/fastapi)
+
+--- 
 # FastAPI with Pluto Example
 
 This is an example application that shows how to adapt a FastAPI application with Pluto.

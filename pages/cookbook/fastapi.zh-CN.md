@@ -4,6 +4,11 @@ description: 这个示例应用程序展示了如何将 FastAPI 应用程序与 
 tags: ["AWS", "Python", "FastAPI"]
 ---
 
+
+**Tags**: #AWS #Python #FastAPI  
+**Code**: [https://github.com/pluto-lang/pluto/tree/main/examples/fastapi](https://github.com/pluto-lang/pluto/tree/main/examples/fastapi)
+
+--- 
 # Pluto 部署 FastAPI 应用
 
 这个示例应用程序展示了如何将 FastAPI 应用程序与 Pluto 结合使用。
