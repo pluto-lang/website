@@ -77,8 +77,16 @@ const config: DocsThemeConfig = {
   },
   editLink: {
     component: ({ children, ...props }) => {
-      const mainRepoPath = props.filePath.replace("pages", "docs");
-      const editUrl = `${PLUTO_MAIN_REPO_URL}/${mainRepoPath}`;
+      let mainRepoPath: string;
+      if (/\/cookbook\//g.test(props.filePath)) {
+        const [exampleName, lang, suffix] = props.filePath.split("/").pop().split(".");
+        const filename = (lang === "en" ? `README` : `README_zh`) + `.${suffix}`;
+        mainRepoPath = `examples/${exampleName}/${filename}`
+      } else {
+        mainRepoPath = props.filePath.replace("pages", "docs");
+      }
+
+      const editUrl = `${PLUTO_MAIN_REPO_URL}/tree/main/${mainRepoPath}`;
       return (
         <a
           href={editUrl}
