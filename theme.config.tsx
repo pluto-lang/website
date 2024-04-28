@@ -100,7 +100,7 @@ const config: DocsThemeConfig = {
     },
   },
   feedback: {
-    labels: "documentation&template=general-question.md",
+    labels: "documentation&template=documentation.yml",
   },
 };
 
