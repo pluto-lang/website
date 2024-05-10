@@ -1,4 +1,5 @@
 {
+  "rag-qa-bot-with-web": "构建带有 Web 界面的文档问答机器人",
   "rag-qa-bot-llama3": "基于 Llama3 的文档问答机器人",
   "quickstart-python": "使用 Router、Queue、KVStore 的简单 Web 应用 - Python",
   "quickstart": "使用 Router、Queue、KVStore 的简单 Web 应用 - TypeScript",

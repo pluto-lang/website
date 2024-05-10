@@ -1,4 +1,5 @@
 {
+  "rag-qa-bot-with-web": "Building a Document Q&A Bot With Web Interface",
   "rag-qa-bot-llama3": "Document-Q&A bot based on Llama3",
   "quickstart-python": "Simple web application using router, queue, and kvstore - Python",
   "quickstart": "Simple web application using router, queue, and kvstore - TypeScript",
