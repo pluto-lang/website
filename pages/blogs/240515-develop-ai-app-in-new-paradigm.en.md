@@ -1,5 +1,5 @@
 ---
-title: "Bridging the Last Mile in LangChain Application Development"
+title: "How to Bridge the Last Mile in LangChain Application Development"
 date: 2024-05-15
 description: "Deploying LangChain applications can be complex due to the need for various cloud services. This article explores the challenges developers face and introduces Pluto, a tool that enables developers to focus on writing business logic rather than getting bogged down in tedious configuration tasks."
 ---
